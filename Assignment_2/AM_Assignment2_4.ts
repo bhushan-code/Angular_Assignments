@@ -1,21 +1,24 @@
-function ChkArmstrong(No : number): number 
+function ChkArmstrong(nNo : number): number 
 {
-    var Sum: number = 0
+    var nSum: number = 0
+    var nDigit : number =0
 
-    while (No > 0)
+
+    while (nNo > 0)
     {
-        var remainder = No % 10
-        Sum += remainder ** 3
-        No = Math.floor(No / 10)
+        nDigit = nNo % 10
+        nSum = nSum + (nDigit * nDigit * nDigit)
+        nNo = Math.floor(nNo / 10)
     }
-    return Sum;
+    return nSum;
 }
 
-var No: number = 153
+var nValue: number = 370
 
-var Result: number = ChkArmstrong(No)
+var nResult: number = 0
+nResult = ChkArmstrong(nValue)
 
-if (Result == No)
+if (nResult == nValue)
     {
         console.log("It is an Armstrong number.")
     }
