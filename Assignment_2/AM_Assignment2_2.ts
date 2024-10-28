@@ -10,7 +10,6 @@ function Summation(...Values: number[]): number
     return sum
 }
 
-
 var nSum = Summation(23,6,7,4,5,7);
 
 console.log("Addition is", nSum);

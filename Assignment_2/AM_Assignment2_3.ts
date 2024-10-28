@@ -18,7 +18,6 @@ function Max(Arr) : number
     return SecondLarge
 }
 
-
 var data: number[] = [23,89,6,29,56,45,77,80]
 
 var nRet : number = 0
