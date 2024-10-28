@@ -24,5 +24,4 @@ function Fibonacci(nNo: number): void
     }
 }
 
-
 Fibonacci(21)
