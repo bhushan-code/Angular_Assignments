@@ -1,0 +1,8 @@
+<h2> Inside the Child1 Componet </h2>
+
+<h2>{{"Number : "+No}}</h2>
+
+<ng-template #Prime> <h2>Its a Prime number</h2></ng-template>
+<ng-template #NotPrime> <h2>Its not a Prime number</h2></ng-template>
+
+<h2 *ngIf = "bFlag ; then NotPrime; else Prime ">/h2>
