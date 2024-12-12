@@ -1,0 +1,151 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+<div class="w-50">
+      <div class="d-flex align-items-center justify-content-between mb-4">
+          <div>
+              <h1 class="form-label text-danger" style="margin-left: 90px;">Contact Our</h1>
+              <h2>Customer Support Center</h2>
+          </div>
+          <img src="assets/data/laptop.png" alt="Laptop" class="img-fluid" style="width: 150px;">
+      </div>
+      
+      <h5 style="text-align:center;"> Contact Information </h5>
+      <p style="text-align:center;"> Please full out your contact information </p>
+
+
+    <form [formGroup] = "LogInForm">
+      <div class="form-group">
+        <label for="Name" class="form-label">Name*</label>
+        <div class="row mb-3">
+
+          <div class="col-md-6">
+            <input  
+                id="firstname"
+                type="text" 
+                class="form-control" 
+                formControlName="firstname" 
+                [class.is-invalid]="LogInForm.get('firstname')?.invalid && LogInForm.get('firstname')?.touched">
+              <small [class.d-none]="LogInForm.get('firstname')?.valid || LogInForm.get('firstname')?.untouched" class="text-danger"> *can't blank </small>
+              
+              <label for="firstName" class="form-label" style="font-size : 11px">First Name</label>
+          </div>
+
+          <div class="col-md-6">
+              <input  
+                id="lastname"
+                type="text" 
+                class="form-control" 
+                formControlName="lastname" 
+                [class.is-invalid]="LogInForm.get('lastname')?.invalid && LogInForm.get('lastname')?.touched">
+              <small [class.d-none]="LogInForm.get('lastname')?.valid || LogInForm.get('lastname')?.untouched" class="text-danger"> *can't blank </small>
+              
+              <label for="firstName" class="form-label" style="font-size : 11px">Last Name</label>
+          </div>
+
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label" formControlName="email">Email*</label>
+
+            <input
+              id="email"
+              type="text"
+              class="form-control" 
+              formControlName="email"
+              [class.is-invalid]="LogInForm.get('email')?.invalid && LogInForm.get('email')?.touched">
+            <small [class.d-none]="LogInForm.get('email')?.valid || LogInForm.get('email')?.untouched" class="text-danger"> *invalid email </small>
+        </div>
+
+        <div class="mb-3">
+            <label for="phone" class="form-label" formControlName="phone">Phone*</label>
+            
+            <input 
+              id="phone"
+              type="text" 
+              class="form-control" 
+              formControlName="phone" 
+              [class.is-invalid]="LogInForm.get('phone')?.invalid && LogInForm.get('phone')?.touched">
+              
+            <small [class.d-none]="LogInForm.get('phone')?.valid || LogInForm.get('phone')?.untouched" class="text-danger"> *digits only & lenght should be 10 </small>
+        </div>
+
+      
+        
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="city" class="form-label" formControlName="city">City*</label>
+
+            <input 
+              id="city"
+              type="text" 
+              class="form-control" 
+              formControlName="city"
+              [class.is-invalid]="LogInForm.get('city')?.invalid && LogInForm.get('city')?.touched">
+
+            <small [class.d-none]="LogInForm.get('city')?.valid || LogInForm.get('city')?.untouched" class="text-danger"> *can't blank </small>
+          </div>
+
+          <div class="col-md-6">
+            <label for="pincode" class="form-label" formControlName="pincode">PinCode*</label>
+
+            <input
+              id="pincode"
+              type="text" 
+              class="form-control" 
+              formControlName="pincode" 
+              [class.is-invalid]="LogInForm.get('pincode')?.invalid && LogInForm.get('pincode')?.touched">
+
+            <small [class.d-none]="LogInForm.get('pincode')?.valid || LogInForm.get('pincode')?.untouched" class="text-danger"> *invalid pincode </small>
+          </div>
+        </div>
+          
+        <div class="mb-3">
+          <label for="state" class="form-label">State*</label>
+          <select 
+            id="state"
+            class="form-select" 
+            formControlName="state">
+            <option value="">Select State</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Gujrat">Gujrat</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+          </select>
+      
+        </div>
+        
+
+        <div class="mb-3">
+          <label for="comment" class="form-label" formControlName="comment"> Comment </label>
+
+          <input 
+            id="comment"
+            type="text" 
+            class="form-control" 
+            formControlName="comment"
+            [class.is-invalid]="LogInForm.get('comment')?.invalid && LogInForm.get('comment')?.touched">
+
+          <small [class.d-none]="LogInForm.get('comment')?.valid || LogInForm.get('comment')?.untouched" class="text-danger"> *minimum 30 character </small>
+      </div>
+
+        <br>
+        
+        <div class="text-center mt-4">
+          <button 
+            type="button" 
+            class="btn btn-primary px-5" 
+            [disabled]="LogInForm.invalid">
+            Submit Form
+          </button>
+        </div>
+        
+      </div>
+    </form>
+  </div>
+</div>
+<h5>
+  {{LogInForm.value | json}}
+</h5>
+
+
+<router-outlet></router-outlet>
+
+
